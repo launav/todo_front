@@ -1,0 +1,72 @@
+body {
+    background: linear-gradient(185deg, rgba(19, 27, 69, 1) 40%, rgba(74, 18, 145, 1) 75%, rgba(125, 107, 243, 1) 100%);
+}
+
+div.div-form-register-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.142);
+    border-radius: 10px;
+    margin-top: 15rem;
+    margin-left: 15rem;
+    width: 25rem;
+    height: 27rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: aliceblue;
+    font-weight: bold;
+}
+
+form.form-register-pages {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+}
+
+input.input-register {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color: #765fa6;
+    border-bottom: 2px solid #b2bcee;
+    width: 260px;
+    height: 40px;
+    margin: 2px;
+    color: aliceblue;
+    font-size: 15px;
+    text-align: center;
+}
+
+input.password-input-register {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color: #654e97;
+    border-bottom: 2px solid #b2bcee;
+    width: 260px;
+    height: 40px;
+    margin: 2px;
+    color: aliceblue;
+    font-size: 15px;
+    text-align: center;
+}
+
+button.btn-submit-register {
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 12px;
+    width: 16.5rem;
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin-top: 20px;
+    color: aliceblue;
+    background-color: #6949cd;
+    cursor: pointer;
+}
+
+input:focus {
+    outline: none;
+}

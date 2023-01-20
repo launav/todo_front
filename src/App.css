@@ -1,0 +1,61 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+header{
+  display: flex;
+  position: fixed;
+  z-index: 1;
+  /* margin-top: 10rem; */
+  justify-content: space-around;
+  /* flex-direction: row-reverse; */
+  /* border: 1px solid red; */
+  align-items: center;
+  /* position: fixed; */
+  width: 100%;
+  height: 6.1rem;
+  /* cambiar */
+  background-color: #131b45;
+}
+
+header h1{
+  font-family: Arial, Helvetica, sans-serif;
+  color: aliceblue;
+  cursor: pointer;
+}
+
+img.icon{
+  width: 75px;
+  height: 75px;
+  border-radius: 50px;
+}
+
+main.appRouter{
+  display: flex;
+  justify-content: flex-start;
+  height: 100vh;
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}

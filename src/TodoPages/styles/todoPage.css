@@ -1,0 +1,25 @@
+body {
+    background-color: rgb(5, 6, 34);
+
+}
+
+section.todo {
+    display: flex;
+    width: 100vw;
+    /* height:fit-content; */
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 6.05rem;
+    /* background-color: rgb(5, 6, 34); */
+
+}
+
+div.navBar {
+    position: fixed;
+}
+
+.card-list-page {
+    width: 100vw;
+    /* border: 1px solid yellowgreen; */
+    align-items: center;
+}

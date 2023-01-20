@@ -1,0 +1,74 @@
+.card-list-item {
+    width: 18rem;
+    height: 15vh;
+    margin: 25px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    background-color: #88b4f6;
+    border-radius: 10px;
+    box-shadow: 1px 10px 12px -7px rgba(0, 0, 0, 0.64);
+}
+
+.card-list-item div:first-child {
+    /* border: 1px solid black; */
+    width: 90%;
+}
+
+.card-list-item p:first-child {
+    font-family: sans-serif;
+    font-weight: bold;
+    color: rgb(45, 44, 44);
+}
+
+.card-list-item p:nth-child(2) {
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    color: rgb(48, 42, 42);
+}
+
+.card-list-item p:nth-child(3) {
+    font-family: sans-serif;
+    text-align: right;
+    font-weight: bold;
+    font-size: 12px;
+    color: rgb(92, 87, 87);
+}
+
+.btns-card-item {
+    display: flex;
+    /* border:1px solid green; */
+    justify-content: space-between;
+}
+
+.btns-card-item button {
+    /* border: 1px solid white; */
+    border-radius: 5px;
+    padding: 2px;
+}
+
+.btns-card-item button:first-child {
+    border-radius: 5px;
+    padding: 2px;
+    border: none;
+    background-color: rgb(144, 50, 50);
+}
+
+.btns-card-item button:nth-child(2) {
+    border-radius: 5px;
+    padding: 2px;
+    border: none;
+    background-color: rgb(254, 230, 230);
+    cursor: pointer;
+}
+
+/* icon */
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 300,
+        'GRAD' 0,
+        'opsz' 48
+}

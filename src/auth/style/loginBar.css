@@ -1,0 +1,26 @@
+div.container-btns-login-bar button {
+    border: none;
+    padding: 12px;
+    border-radius: 15px;
+    width: 120px;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: aliceblue;
+}
+
+div.container-btns-login-bar button:first-child {
+    margin-right: 2rem;
+    background-color: #6949cd;
+
+}
+
+div.container-btns-login-bar button:nth-child(2) {
+    font-weight: bold;
+    border: 2px solid aliceblue;
+    background-color: #131b45;
+}
+
+div.container-btns-login-bar button:first-child:hover{
+    background-color: #8457dd;
+}
