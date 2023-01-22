@@ -64,6 +64,16 @@ export const TodoModal = () => {
         closeModal();
     };
 
+    const resetForm = () => {
+        setFormValues({
+            ...formValues,
+            title: '',
+            description: '',
+            completed: false,
+            date: new Date()
+        })
+    }
+
     //useState de los errores, le pasaremos un array vacío para hacer las validaciones
     const [error, setError] = useState([]);
 
@@ -92,6 +102,7 @@ export const TodoModal = () => {
 
         //añadir elementos y le pasamos el estado del formulario
         addElement(formValues);
+        resetForm();
         //cerramos la modal
         closeModal();
     };

@@ -22,7 +22,7 @@ export const CardListTodo = ({ removeElement, completeElement, pgnt }) => {
           {
             pgnt.length == 0 ?
               (
-                <p>No hay elementos que mostrar</p>
+                <p className='no-items'>No hay elementos que mostrar</p>
               )
               :
               (null)

@@ -26,6 +26,12 @@ div.links-btns button:hover {
 
 }
 
+.no-items{
+    color: white;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 /* card */
 .card-list {
     list-style: none;
