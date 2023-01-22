@@ -14,9 +14,10 @@ export const AppRouter = () => {
     // vamos a necesitar el check token del back y el check status
     //esto va a cambiar aquí y en el app.jsx
 
-    // const authStatus = 'not-authenticated'
+    //si no está autenticado nos llevará a unas rutas y sino a otras
     const { status, checkToken } = useAuthStore();
 
+    //chequeamos el token
     useEffect(() => {
         checkToken()
     }, []);

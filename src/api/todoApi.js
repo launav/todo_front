@@ -15,13 +15,13 @@ const todoApi = axios.create({
 //middleware
 todoApi.interceptors.request.use(config => {
     config.headers = {
+        //del header recogemos el token
         ...config.headers,
         'x-token': localStorage.getItem('token')
     };
     //retornamos
     return config;
 });
-
 
 
 export default todoApi;

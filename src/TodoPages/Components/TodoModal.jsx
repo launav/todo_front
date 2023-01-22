@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
-
 import DatePicker, { registerLocale } from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";//estilos del calendario
-
 import Modal from 'react-modal';
 
 import { useUiStore } from '../../hooks/useUiStore';
@@ -29,39 +27,41 @@ const customStyles = {
 
 Modal.setAppElement('#root');
 
-export const TodoModal = ({ addTodo, updateTodo }) => {
+export const TodoModal = () => {
+
+    //llamamos al dispacth de añadir elementos
+    const { addElement } = useTodoStore();
 
     //acciones de la modal
     const { isOpenModal, closeModal } = useUiStore();
-    const [todo, setTodo] = useState('');
-    const [description, setDescription] = useState('')
 
-    //esto lo usaré para guardar la fecha
-    const [form, setForm] = useState({
-        _id: new Date().getTime(),
-        title: 'titulo desde modal',
+    //esto lo usaré para guardar los datos del form
+    const [formValues, setFormValues] = useState({
+        title: '',
+        description: '',
+        completed: false,
         date: new Date()
     });
 
+    //le mandamos como primer argumento el valor inicial del formulario
     const handleDateChange = (date, field) => {
-        setForm({
-            ...form,
+        setFormValues({
+            ...formValues,
             [field]: date
-        })
+        });
     };
 
+    //delegacion de eventos,cada elemento/input seleccionado tendrá el valor que le corresponde debido al name
+    const handleInputchange = ({ target }) => {
+        setFormValues({
+            ...formValues,
+            [target.name]: target.value
+        });
+    }
+
+    //cerramos la modal
     const onCloseModal = () => {
-        //cerrar modal
         closeModal();
-    };
-
-    //cogerá el valor de lo que entre por el input
-    const handleInputChange = (ev) => {//cambiar
-        setTodo(ev.target.value);
-    };
-
-    const handleTextAreaChange = (ev) => {//cambiar
-        setDescription(ev.target.value);
     };
 
     //useState de los errores, le pasaremos un array vacío para hacer las validaciones
@@ -70,35 +70,28 @@ export const TodoModal = ({ addTodo, updateTodo }) => {
     //funcion para añadir el obj al add, validar el formulario y cerrar la modal
     const handleAddTodo = (ev) => {
         ev.preventDefault();
+
         //aqui vamos a meter los errores
         setError([]);
+
         //esta variable va a servir para utilizar la fecha actual y compararla con la que entra por el valor de date del formulario
+        //constante que nos almacenará la fecha actual y que la utilizaremos para ver que lo que nos entre por el formulario
+        //sea mayor que la fecha actual
         const actualDate = new Date();
 
-        if (actualDate >= form.date || ev.target.title.value >= 0) {
-            if (actualDate >= form.date) setError((error) => [...error, 'Date must be higher than actual date.']);
-            if (ev.target.title.value >= 0) setError((error) => [...error, 'You must write something.']);
+        /*si la fecha actual es mayor que la fecha del formulario que me setee el error de que lo que entre
+        debe ser mayor, y si lo que entre por el input del titulo sea mayor que 0, si es igual a 0 que devuelva
+        un error */
+        if (actualDate >= formValues.date || isNaN(formValues.title.length >= 0)) {
+            if (actualDate >= formValues.date) setError((error) => [
+                ...error, 'Date must be higher than actual date.'
+            ]);
+            if (formValues.title.length >= 0) setError((error) => [...error, 'You must write something.']);
             return;
         };
 
-        // console.log(ev.target.tarea.value)
-        console.log('añadiendo todo desde la modal', form.title);
-        //añado el objeto del evento al addElements
-
-        const newTodo = {
-            _id: new Date().getTime(),
-            title: todo,
-            description: description,
-            date: form.date.toLocaleDateString(),
-            // date: new Date().toLocaleDateString(),
-            completed: false,
-            user: {//entrará por la bbdd
-                _id: '1234',
-                name: 'ana'
-            }
-        };
-
-        addTodo(newTodo);
+        //añadir elementos y le pasamos el estado del formulario
+        addElement(formValues);
         //cerramos la modal
         closeModal();
     };
@@ -112,32 +105,32 @@ export const TodoModal = ({ addTodo, updateTodo }) => {
                 contentLabel="Example Modal"
             >
                 <form onSubmit={handleAddTodo}
-                className='form-todo-modal'>
+                    className='form-todo-modal'>
                     <p>Add Todo</p>
                     <div className='input-Text'>
                         <input
                             className='description-text'
                             type="text"
                             name='title'
-                            id='title'
+                            value={formValues.title}
                             placeholder='Add title'
-                            onChange={handleInputChange} />
+                            onChange={handleInputchange} />
                     </div>
                     <div className='description-text'>
                         <input
                             className='description-text'
                             type="text"
                             name='description'
-                            id='description'
+                            value={formValues.description}
                             placeholder='Add description'
                             maxLength={31}
-                            onChange={handleTextAreaChange} />
+                            onChange={handleInputchange} />
                     </div>
 
                     <DatePicker
                         dateFormat="dd/MM/yyyy"
                         className='description-text'
-                        selected={form.date}
+                        selected={formValues.date}
                         locale="es"
                         onChange={(date) => handleDateChange(date, 'date')}
                     />

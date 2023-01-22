@@ -24,3 +24,19 @@ div.container-btns-login-bar button:nth-child(2) {
 div.container-btns-login-bar button:first-child:hover{
     background-color: #8457dd;
 }
+
+@media (max-width: 450px) {
+    .container-btns-login-bar{
+        display: flex;
+        flex-direction: column;
+        margin-right: -4rem;
+    }
+    div.container-btns-login-bar button {
+        padding: 10px;
+        border-radius: 10px;
+        width: 100px;
+        margin-bottom: 10px;
+        font-size: 17px;
+    }
+    
+}

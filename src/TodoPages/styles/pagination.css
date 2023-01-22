@@ -1,0 +1,35 @@
+.pagination-list {
+    /* border: 10px solid blue; */
+    width: 80vw;
+    margin-left: 5rem;
+    display: flex;
+    justify-content: center;
+    /* margin-top: 2vh; */
+    margin-bottom:20px ;
+}
+
+.list-pagination {
+    list-style: none;
+    margin: 0 20px;   
+}
+
+.list-pagination button{
+    background-color: rgb(192, 126, 253);
+    border: none;
+    padding: 12px;
+    border-radius: 2px;
+    text-decoration: none;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}
+
+.page-list-link:hover{
+    background-color: rgb(146, 143, 216);
+}
+
+@media (max-width: 830px) {
+    .pagination-list {
+        width: 50vw;
+    }
+}

@@ -7,7 +7,7 @@ import '../style/logoutBar.css'
 export const LogoutBar = () => {
 
     const { startLogout, user } = useAuthStore()
-
+// le pasaremos al btn startlogout y el usuario
     return (
         <div className='containerLogout'>
             {/* el nombre lo cogeremos de la bbdd */}

@@ -5,9 +5,8 @@ div.links-btns {
     /* border: 1px solid red; */
     width: 100vw;
     margin-top: 6.05rem;
-     margin-left: 15rem;
+    margin-left: 15rem;
     background-color: #131b45;
-    background-repeat: repeat-y;
 }
 
 div.links-btns button {
@@ -42,4 +41,53 @@ div.links-btns button:hover {
     flex-wrap: wrap;
     width: 70vw;
     /* border: 1px solid blue; */
+}
+
+div.links-btns button:focus {
+    border-bottom: 1px solid white;
+}
+
+
+
+/* ///////////////////////////////media//////////////////////////////// */
+@media (max-width: 830px) {
+    div.links-btns {
+        /* border: 1px solid red; */
+        width: 90vw;
+        margin-left: 10rem;
+    }
+
+    div.todo .card-list {
+        /* border: 1px solid red; */
+        margin-top: -5rem;
+        width: 80vw;
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+@media (max-width: 450px) {
+    div.links-btns {
+        display: flex;
+        width: 50vw;
+        height: 49px;
+        margin-top: 10rem;
+    }
+
+    div.todo .card-list {
+        margin-top: 7rem;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .card-list ul {
+        display: flex;
+        margin-top: 0rem;
+        margin-left: 0rem;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        width: 70vw;
+        /* border: 1px solid blue; */
+    }
 }

@@ -7,7 +7,8 @@ import { Provider } from 'react-redux'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  // por encima el provider para el redux took-kit {/* insertar el provider store y el browser router para envolverlo todo*/}
+  //browser router para envolver la app con las rutas
+  //y estore para envolver y utilizar redux en la app
   <Provider store={store}>
     <BrowserRouter>
       <App />

@@ -7,8 +7,8 @@ export const LandingPage = () => {
         <section className='landing-card'>
             {/* HomePage */}
             <div className='text-landing-card'>
-                <h2>TODO</h2>
-                <h3>OR NOT TODO</h3>
+                <h2>todo</h2>
+                <h3>or not todo</h3>
                 <p>
                     Maybe you can put your things Todo or maybe not,
                     whatever... Easy and supereasy, you only have Todo it.

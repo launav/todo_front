@@ -19,11 +19,12 @@ function App() {
 
   const navigate = useNavigate();
 
+  //funcion que se ejecutará cuando le de click a la img en el responsive y al logo en el pc-version
   const handleNavigate = () => {
     navigate('/');
   };
 
-  
+
 
   return (
     <>
@@ -31,7 +32,10 @@ function App() {
         {/* va directamente a la home */}
 
         <img className='icon' src="../public/icono.png" alt="icon" />
-
+        <img
+          onClick={handleNavigate}
+          className='icon-2'
+          src="../public/icono.png" alt="icon" />
         <h1
           onClick={handleNavigate}
         >ToDoToday</h1>

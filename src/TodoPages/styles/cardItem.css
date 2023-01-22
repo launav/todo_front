@@ -26,20 +26,13 @@
     font-family: sans-serif;
     font-weight: bold;
     font-size: 12px;
-    color: rgb(48, 42, 42);
-}
-
-.card-list-item p:nth-child(3) {
-    font-family: sans-serif;
-    text-align: right;
-    font-weight: bold;
-    font-size: 12px;
+    margin-top: 1rem;
     color: rgb(92, 87, 87);
 }
 
 .btns-card-item {
     display: flex;
-    /* border:1px solid green; */
+    margin-top: 1rem;
     justify-content: space-between;
 }
 
@@ -53,7 +46,8 @@
     border-radius: 5px;
     padding: 2px;
     border: none;
-    background-color: rgb(144, 50, 50);
+    background-color: rgb(235, 128, 104);
+    cursor: pointer;
 }
 
 .btns-card-item button:nth-child(2) {
@@ -64,11 +58,28 @@
     cursor: pointer;
 }
 
-/* icon */
+/* icon papelera */
 .material-symbols-outlined {
     font-variation-settings:
         'FILL' 0,
         'wght' 300,
         'GRAD' 0,
         'opsz' 48
+}
+
+
+@media (max-width: 830px) {
+    .card-list-item {
+        height: 12vh;
+    }
+}
+
+@media (max-width: 450px) {
+    .card-list-item {
+        width: 20rem;
+        height: 15vh;
+        margin: 10px;
+        align-items: center;
+        background-color: #88b4f6;
+    }
 }

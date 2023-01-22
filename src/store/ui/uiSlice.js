@@ -8,6 +8,7 @@ export const uiSlice = createSlice({
         isOpenModal: false
     },
     reducers: {
+        //devuelven un boolean si esta abierto será true y si está cerrada será false
         onOpenModal: (state) => {
             state.isOpenModal = true;
         },

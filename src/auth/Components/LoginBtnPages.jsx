@@ -21,15 +21,19 @@ export const LoginBtnPages = () => {
 
   const { startLogin, errorMessage } = useAuthStore();
 
+  //le pasamos los inputs del formulario al starlogin
   const loginSubmitForm = (ev) => {
     ev.preventDefault();
     // console.log(ev);
     startLogin({ email: loginEmail, password: loginPassword });
   };
 
-  // useEffect(() => {
-  //   Swal.fire('Incorrect email or password', errorMessage, 'error')
-  // }, []);
+  // si hay error, es decir, si es distinto a undefined que me salte el msg de error
+  useEffect(() => {
+    if (errorMessage !== undefined) {
+      Swal.fire('Incorrect email or password', errorMessage, 'error')
+    }
+  }, []);
 
 
   return (
@@ -54,7 +58,7 @@ export const LoginBtnPages = () => {
 
           <input
             className='password-input-login'
-            type="text"
+            type="password"
             placeholder='Password'
             name='loginPassword'
             value={loginPassword}

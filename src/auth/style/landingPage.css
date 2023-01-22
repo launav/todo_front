@@ -23,12 +23,14 @@ div.text-landing-card h2 {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 40px;
     padding-bottom: 10px;
+    text-transform: uppercase;
 }
 
 div.text-landing-card h3 {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 40px;
     padding-bottom: 40px;
+    text-transform: uppercase;
 }
 
 div.text-landing-card p {
@@ -52,9 +54,41 @@ div.img-landing-card img {
 }
 
 
-@media (max-width: 700px) {
+@media (max-width: 830px) {
     section.landing-card {
+        background-color: #131b45;
         flex-direction: column;
         align-items: center;
     }
+}
+
+@media (max-width: 450px) {
+    section.landing-card {
+        /* border: 1px solid red; */
+        width: 100vw;
+        margin-top: 10rem;
+    }
+    div.text-landing-card {
+        width: 70%;
+    }
+
+    div.img-landing-card {
+        margin-top: 2rem;
+        /* border: 1px solid pink; */
+        width: 25rem;
+        height: 20rem;
+    }
+    
+    div.img-landing-card img {
+        width: 100%;
+        height: 100%;
+    }
+
+}
+
+@media (max-width: 350px) {
+    section.landing-card {
+        margin-top: 15rem;
+    }
+   
 }

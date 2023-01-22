@@ -70,3 +70,30 @@ button.btn-submit-register {
 input:focus {
     outline: none;
 }
+
+/* ////////////////////////////////////////////////////////////////////////////////// */
+@media (max-width: 830px) {
+    div.div-form-register-page {
+        height: 30rem;
+        margin: 13.3rem;
+    }
+
+}
+
+@media (max-width: 450px) {
+    div.div-form-register-page {
+        background-color: transparent;
+        margin-left: -.6rem;
+        height: 20rem;
+    }
+
+    div.div-form-register-page h3 {
+        background-color: rgba(255, 255, 255, 0.142);
+        padding: 20px;
+        width: 14rem;
+        text-align: center;
+        border-radius: 5px;
+
+    }
+
+}

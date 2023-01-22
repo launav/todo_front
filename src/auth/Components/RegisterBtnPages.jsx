@@ -33,10 +33,12 @@ export const RegisterBtnPages = () => {
       return
     };
 
+    //le pasamos lo que nos entre por los inputs al star register del useAuthStore
     startRegister({ name: registerName, email: registerEmail, password: registerPassword });
 
   };
 
+  //si el estado incial de nuestra app es igual a checking que me aparezca el cargando sino que cargue lo demás
   useEffect(() => {
     if (status === "checking") {
       return (<h3>Cargando...</h3>)
@@ -76,7 +78,7 @@ export const RegisterBtnPages = () => {
 
           <input
             className='password-input-register'
-            type="text"
+            type="password"
             placeholder='contraseña'
             name='registerPassword'
             id='registerPassword'
@@ -86,7 +88,7 @@ export const RegisterBtnPages = () => {
 
           <input
             className='password-input-register'
-            type="text"
+            type="password"
             placeholder='Repite la contraseña'
             name='registerPassword2'
             id='registerPassword2'

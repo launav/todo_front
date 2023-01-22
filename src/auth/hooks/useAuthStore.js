@@ -17,10 +17,11 @@ export const useAuthStore = () => {
         try {
 
             const { data } = await todoApi.post('/auth', { email, password });
+            //seteamos el token en la bbdd que nos dejará la sesion iniciada
             localStorage.setItem('token', data.token);
 
-            console.log(data.token);
-
+            // console.log(data.token);
+            //almacenamos los datos del usuario de la bbdd
             const user = {
                 name: data.user.name,
                 uid: data.user.uid
@@ -30,19 +31,17 @@ export const useAuthStore = () => {
 
         } catch (error) {
             dispatch(onLogout(''));
-            // setTimeout(() => {
-            //     dispatch(clearErrorMessage())
-            // }, 100)
         }
 
     };
 
+    //registro
     const startRegister = async ({ name, email, password }) => {
         //comprobamos que coincidan los tokens
         dispatch(onChecking());
 
         try {
-
+            //misma formula que la anterior
             const { data } = await todoApi.post('/auth/new', { name, email, password });
             localStorage.setItem('token', data.token);
 
@@ -63,14 +62,17 @@ export const useAuthStore = () => {
 
     }
 
+    //comprobamos el token
     const checkToken = async () => {
 
         const token = localStorage.getItem('token');
 
+        //si no hay token que me despache el logout
         if (!token) return dispatch(onLogout());
 
         try {
 
+            //por get llamamos del back al renew y comprobamos que esa sesion no ha caducado
             const { data } = await todoApi.get('/auth/renew');
             localStorage.setItem('token', data.token);
 
@@ -90,6 +92,7 @@ export const useAuthStore = () => {
     };
 
     const startLogout = async () => {
+        // limpiamos el almacenamiento del token del localstorage y despachamos el logout
         localStorage.clear();
         dispatch(onLogout());
     };

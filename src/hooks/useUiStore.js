@@ -7,10 +7,12 @@ export const useUiStore = () => {
     const { isOpenModal } = useSelector((state) => state.ui);
     const dispatch = useDispatch();
 
+    //abre la modal
     const openModal = () => {
         dispatch(onOpenModal());
     };
 
+    //cierra la modal
     const closeModal = () => {
         dispatch(onCloseModal());
     };

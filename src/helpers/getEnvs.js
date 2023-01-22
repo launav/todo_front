@@ -1,11 +1,9 @@
-//vamos a importar los metas
 
 export const getEnvs = () => {
-
-    import.meta.env;
-
-    return {
-        ...import.meta.env
+    
+    return{
+        //nos retorna la variable de entorno de la api
+        VITE_API_URL: import.meta.env.VITE_API_URL
     };
 };
 

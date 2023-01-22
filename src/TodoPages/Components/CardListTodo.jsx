@@ -3,43 +3,53 @@ import { useState } from 'react';
 
 import '../styles/cardListTodo.css'
 
+export const CardListTodo = ({ removeElement, completeElement, pgnt }) => {
 
-export const CardListTodo = ({ elements, removeElement, completeElement, updateElement }) => {
-
+  //para los botones y los maps que me devolverán los diferentes estados de los elementos: completados, pendientes y todos
   const [sort, setSort] = useState('all');
 
   return (
-    <div className='todo'>
 
+    <div className='todo'>
       <div className='links-btns'>
         <button onClick={() => setSort('all')}>All</button>
         <button onClick={() => setSort('completed')}>Complete</button>
+        <button onClick={() => setSort('pending')}>Pending</button>
       </div>
       <div className='card-list'>
         <ul>
+          {/* si no hay elementos */}
           {
-            elements.length > 0 && sort === 'all'
-              ?
-              elements.map(element => {
-                return (
+            pgnt.length == 0 ?
+              (
+                <p>No hay elementos que mostrar</p>
+              )
+              :
+              (null)
+          }
 
+          {/* todos los elementos */}
+          {
+            pgnt.length > 0 && sort === 'all'
+              ?
+              pgnt.map(element => {
+
+                return (
                   <CardItem
                     key={element._id}
                     elements={element}
                     removeTodo={removeElement}
                     completeTodo={completeElement}
-                    updateTodo={updateElement}
-                  />
-                )
-
+                  />)
               }) :
               null
           }
-          {/* para los completados */}
+
+          {/* elementos completados */}
           {
-            elements.length > 0 && sort === 'completed'
+            pgnt.length > 0 && sort === 'completed'
               ?
-              elements.map(element => {
+              pgnt.map(element => {
                 return (
                   element.completed && (
                     <CardItem
@@ -47,12 +57,32 @@ export const CardListTodo = ({ elements, removeElement, completeElement, updateE
                       elements={element}
                       removeTodo={removeElement}
                       completeTodo={completeElement}
-                      updateTodo={updateElement}
                     />
                   )
                 );
               }) :
-              null}
+              null
+          }
+
+          {/* elementos pendientes */}
+          {
+            pgnt.length > 0 && sort === 'pending'
+              ?
+              pgnt.map(element => {
+                return (
+                  element.completed == false && (
+                    <CardItem
+                      key={element._id}
+                      elements={element}
+                      removeTodo={removeElement}
+                      completeTodo={completeElement}
+                    />
+                  )
+                );
+              }) :
+              null
+          }
+
         </ul>
       </div>
     </div >

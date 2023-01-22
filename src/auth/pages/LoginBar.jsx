@@ -9,6 +9,7 @@ export const LoginBar = () => {
     // voy a realizar dos funciones que me lleven a los otros archivos
     const navigate = useNavigate()
 
+     //me llevará a esa ruta para logearme
     const handleLogin = () => {
         // con el navigate accederé a la ruta especificada en approutes
         navigate('/auth/login', {
@@ -17,16 +18,13 @@ export const LoginBar = () => {
         });
     };
 
+    //me llevará a esa ruta para registrarme
     const handleRegister = () => {
         navigate('/auth/register', {
             // vigilar el replace
             replace: true
         })
     };
-
-    //const handleSignin = () => {
-    //con el navigate accederemos a la ruta especificada en approutes
-    //};
 
     return (
         <div className='container-btns-login'>
